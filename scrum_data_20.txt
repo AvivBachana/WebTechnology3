@@ -1,0 +1,346 @@
+{
+	"kanban": {
+		"tasks": {
+			"t1": {
+				"title": "Setup Development Environment",
+				"description": "Install necessary software and tools for the project.",
+				"value": 500,
+				"priority": 1,
+				"createddate": "2025-04-15",
+				"workload": 8,
+				"urgency": 9,
+				"risk": 2,
+				"dependencies": [],
+				"complexity": 3,
+				"owner": "m1"
+				},
+			"t2": {
+				"title": "Design Database Schema",
+				"description": "Create the initial database structure for user data.",
+				"value": 750,
+				"priority": 2,
+				"createddate": "2025-04-16",
+				"workload": 12,
+				"urgency": 8,
+				"risk": 3,
+				"dependencies": ["t1"],
+				"complexity": 4,
+				"owner": "m3"
+			},
+			"t3": {
+				"title": "Implement User Authentication",
+				"description": "Build login, registration, and session management.",
+				"value": 1500,
+				"priority": 1,
+				"createddate": "2025-04-18",
+				"workload": 20,
+				"urgency": 10,
+				"risk": 4,
+				"dependencies": ["t2"],
+				"complexity": 5,
+				"owner": "m5"
+			},
+			"t4": {
+				"title": "Develop Homepage UI",
+				"description": "Create the main landing page user interface.",
+				"value": 600,
+				"priority": 3,
+				"createddate": "2025-04-19",
+				"workload": 10,
+				"urgency": 7,
+				"risk": 1,
+				"dependencies": ["t1"],
+				"complexity": 3,
+				"owner": "m2"
+			},
+			"t5": {
+				"title": "Write Unit Tests for Authentication",
+				"description": "Create tests to ensure authentication functions work correctly.",
+				"value": 400,
+				"priority": 2,
+				"createddate": "2025-04-20",
+				"workload": 8,
+				"urgency": 8,
+				"risk": 2,
+				"dependencies": ["t3"],
+				"complexity": 3,
+				"owner": "m6"
+			},
+			"t6": {
+				"title": "Setup CI/CD Pipeline",
+				"description": "Configure automated build and deployment process.",
+				"value": 1000,
+				"priority": 4,
+				"createddate": "2025-04-22",
+				"workload": 15,
+				"urgency": 6,
+				"risk": 3,
+				"dependencies": ["t1"],
+				"complexity": 4,
+				"owner": "m8"
+			},
+			"t7": {
+				"title": "Create User Profile Page",
+				"description": "Develop the UI and backend for viewing and editing user profiles.",
+				"value": 1200,
+				"priority": 2,
+				"createddate": "2025-04-24",
+				"workload": 18,
+				"urgency": 9,
+				"risk": 2,
+				"dependencies": ["t3", "t4"],
+				"complexity": 4,
+				"owner": "m4"
+			},
+			"t8": {
+				"title": "Implement Password Reset Functionality",
+				"description": "Add feature for users to reset forgotten passwords.",
+				"value": 800,
+				"priority": 3,
+				"createddate": "2025-04-25",
+				"workload": 10,
+				"urgency": 7,
+				"risk": 3,
+				"dependencies": ["t3"],
+				"complexity": 3,
+				"owner": "m5"
+			},
+			"t9": {
+				"title": "Deploy to Staging Environment",
+				"description": "Push the current build to the staging server for testing.",
+				"value": 700,
+				"priority": 1,
+				"createddate": "2025-04-26",
+				"workload": 6,
+				"urgency": 10,
+				"risk": 3,
+				"dependencies": ["t6"],
+				"complexity": 2,
+				"owner": "m8"
+			},
+			"t10": {
+				"title": "Perform Staging Environment Testing",
+				"description": "Test all implemented features on the staging server.",
+				"value": 900,
+				"priority": 1,
+				"createddate": "2025-04-27",
+				"workload": 15,
+				"urgency": 10,
+				"risk": 1,
+				"dependencies": ["t9"],
+				"complexity": 3,
+				"owner": "m10"
+			},
+			"t11": {
+				"title": "Design Admin Dashboard UI",
+				"description": "Plan the layout and elements for the administrator interface.",
+				"value": 700,
+				"priority": 3,
+				"createddate": "2025-05-01",
+				"workload": 12,
+				"urgency": 6,
+				"risk": 1,
+				"dependencies": [],
+				"complexity": 4,
+				"owner": "m2"
+			},
+			"t12": {
+				"title": "Implement Role-Based Access Control (RBAC)",
+				"description": "Develop the system for assigning roles and permissions.",
+				"value": 1800,
+				"priority": 2,
+				"createddate": "2025-05-02",
+				"workload": 25,
+				"urgency": 7,
+				"risk": 4,
+				"dependencies": ["t3"],
+				"complexity": 5,
+				"owner": "m5"
+			},
+			"t13": {
+				"title": "Develop Admin User Management Features",
+				"description": "Build functionality for admins to view, create, update, and delete users.",
+				"value": 1600,
+				"priority": 1,
+				"createddate": "2025-05-03",
+				"workload": 22,
+				"urgency": 8,
+				"risk": 3,
+				"dependencies": ["t12", "t11"],
+				"complexity": 4,
+				"owner": "m7"
+			},
+			"t14": {
+				"title": "Integrate Third-Party Payment Gateway",
+				"description": "Connect the application with a payment processing service.",
+				"value": 2500,
+				"priority": 1,
+				"createddate": "2025-05-04",
+				"workload": 30,
+				"urgency": 9,
+				"risk": 5,
+				"dependencies": ["t1"],
+				"complexity": 5,
+				"owner": "m9"
+			},
+			"t15": {
+				"title": "Develop Order Processing Logic",
+				"description": "Implement the backend logic for handling customer orders.",
+				"value": 2000,
+				"priority": 2,
+				"createddate": "2025-05-05",
+				"workload": 28,
+				"urgency": 8,
+				"risk": 4,
+				"dependencies": ["t2", "t14"],
+				"complexity": 5,
+				"owner": "m3"
+			},
+			"t16": {
+				"title": "Create Product Catalog API",
+				"description": "Build REST endpoints to fetch and manage product data.",
+				"value": 1800,
+				"priority": 3,
+				"createddate": "2025-05-06",
+				"workload": 25,
+				"urgency": 6,
+				"risk": 3,
+				"dependencies": ["t2"],
+				"complexity": 4,
+				"owner": "m1"
+			},
+			"t17": {
+				"title": "Develop Shopping Cart Functionality",
+				"description": "Implement features for users to add, remove, and update items in their cart.",
+				"value": 1500,
+				"priority": 2,
+				"createddate": "2025-05-07",
+				"workload": 20,
+				"urgency": 7,
+				"risk": 3,
+				"dependencies": ["t3", "t16"],
+				"complexity": 4,
+				"owner": "m4"
+			},
+			"t18": {
+				"title": "Implement Checkout Workflow",
+				"description": "Build the steps a user takes from the cart to placing an order.",
+				"value": 2200,
+				"priority": 1,
+				"createddate": "2025-05-08",
+				"workload": 30,
+				"urgency": 9,
+				"risk": 4,
+				"dependencies": ["t15", "t17", "t14"],
+				"complexity": 5,
+				"owner": "m9"
+			},
+			"t19": {
+				"title": "Add Email Notification Service",
+				"description": "Setup sending emails for order confirmations, password resets, etc.",
+				"value": 900,
+				"priority": 4,
+				"createddate": "2025-05-09",
+				"workload": 15,
+				"urgency": 5,
+				"risk": 2,
+				"dependencies": [],
+				"complexity": 3,
+				"owner": "m6"
+			},
+			"t20": {
+				"title": "Plan End-to-End Testing",
+				"description": "Outline the test cases for verifying the entire application flow.",
+				"value": 600,
+				"priority": 5,
+				"createddate": "2025-05-10",
+				"workload": 10,
+				"urgency": 4,
+				"risk": 1,
+				"dependencies": [],
+				"complexity": 2,
+				"owner": "m10"
+			}
+		},
+		"backlog": [
+			"t11",
+			"t12",
+			"t13",
+			"t14",
+			"t15",
+			"t16",
+			"t17",
+			"t18",
+			"t19",
+			"t20"
+		],
+		"sprintlog": {
+			"sp1": {
+				"new": ["t1", "t2"],
+				"todo": ["t3", "t4"],
+				"doing": ["t5"],
+				"review": ["t6"],
+				"done": ["t7", "t8", "t9", "t10"]
+			},
+			"sp2": {
+				"new": [],
+				"todo": [],
+				"doing": ["t11", "t12"],
+				"review": ["t13"],
+				"done": ["t14", "t15", "t16", "t17", "t18", "t19", "t20"]
+			}
+		},
+	"members": {
+		"m1": {
+			"name": "Alice Smith",
+			"email": "alice.s@example.com",
+			"phone": "555-123-4567"
+		},
+		"m2": {
+			"name": "Bob Johnson",
+			"email": "bob.j@example.com",
+			"phone": "555-987-6543"
+		},
+		"m3": {
+			"name": "Charlie Brown",
+			"email": "charlie.b@example.com",
+			"phone": "555-555-1212"
+		},
+		"m4": {
+			"name": "Diana Prince",
+			"email": "diana.p@example.com",
+			"phone": "555-111-2222"
+		},
+		"m5": {
+			"name": "Ethan Hunt",
+			"email": "ethan.h@example.com",
+			"phone": "555-333-4444"
+		},
+		"m6": {
+			"name": "Fiona Glenanne",
+			"email": "fiona.g@example.com",
+			"phone": "555-666-7777"
+		},
+		"m7": {
+			"name": "George Costanza",
+			"email": "george.c@example.com",
+			"phone": "555-888-9999"
+		},
+		"m8": {
+			"name": "Holly Golightly",
+			"email": "holly.g@example.com",
+			"phone": "555-222-3333"
+		},
+		"m9": {
+			"name": "Ivan Drago",
+			"email": "ivan.d@example.com",
+			"phone": "555-444-5555"
+		},
+		"m10": {
+			"name": "Jane Doe",
+			"email": "jane.d@example.com",
+			"phone": "555-777-8888"
+		}
+	}
+	}
+}

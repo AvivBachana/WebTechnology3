@@ -1,0 +1,108 @@
+
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> חבר צוות</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- תפריט רגיל למסכים גדולים -->
+<!-- <nav class="main-menu">
+  <ul>
+    <li><a href="productownercombined.html" target="_blank"> בעל מוצר</a></li>
+    <li><a href="scrummastercombined.html" target="_blank"> סקרם מאסטר</a></li>
+    <li><a href="teammembercombined.html" target="_blank"> חבר צוות</a></li>
+  </ul>
+</nav> -->
+
+<!-- תפריט המבורגר למסכים קטנים -->
+<div class="hamburger-menu">
+  <button onclick="toggleMenu()">☰</button>
+  <div id="menu-options" class="menu-hidden">
+    <a href="productownercombined.html" target="_blank">בעל מוצר </a>
+    <a href="scrummastercombined.html" target="_blank"> סקרם מאסטר</a>
+    <a href="teammembercombined.html" target="_blank"> חבר צוות</a>
+  </div>
+</div>
+
+
+ <div class="member-header">
+  <div style="display: flex; align-items: center; gap: 0.8em;">
+    <img id="member-image" src="" alt="תמונה">
+    <h1 id="member-name">חבר צוות</h1>
+  </div>
+</div>
+
+
+
+  <div class="controls">
+    <label for="team-member-select">בחר/י חבר צוות:</label>
+    <select id="team-member-select"></select>
+
+    <label for="sprint-select">בחר/י ספרינט:</label>
+    <select id="sprint-select">
+      <option value="sp1">ספרינט 1</option>
+      <option value="sp2">ספרינט 2</option>
+    </select>
+
+    <label for="sort-tasks">מיון לפי:</label>
+    <select id="sort-tasks">
+      <option value="">ללא מיון</option>
+      <option value="priority">עדיפות</option>
+      <option value="value">ערך</option>
+      <option value="workload">עומס</option>
+    </select>
+    <select id="jump-to-status">
+  <option value="">דלג לסטטוס...</option>
+  <option value="new">חדש</option>
+  <option value="todo">לביצוע</option>
+  <option value="doing">בתהליך</option>
+  <option value="review">לבדיקה</option>
+  <option value="done">בוצע</option>
+  <option value="report-table">דו״ח משימות</option>
+
+</select>
+
+  </div>
+
+  <div id="kanban-board" class="kanban-board"></div>
+
+  <h2 style="text-align:center">דוח משימות</h2>
+  <table id="report-table">
+    <thead>
+      <tr>
+        <th>כותרת</th>
+        <th>סטטוס</th>
+        <th>עדיפות</th>
+        <th>ערך</th>
+        <th>עומס</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div id="task-modal" class="modal" style="display:none">
+    <div class="modal-content">
+      <h3>עריכת משימה</h3>
+      <input id="task-title" placeholder="כותרת" />
+      <select id="task-owner"></select>
+      <input id="task-value" type="number" placeholder="ערך" />
+      <select id="task-priority">
+        <option>גבוהה</option>
+        <option>בינונית</option>
+        <option>נמוכה</option>
+      </select>
+      <input id="task-workload" type="number" placeholder="עומס" />
+      <input type="hidden" id="statusId" value="new" />
+      <button onclick="saveTask()">💾 שמירה</button>
+      <button onclick="closeModal()">❌ ביטול</button>
+    </div>
+  </div>
+
+
+  <script src="main.js"></script>
+</body>
+</html>

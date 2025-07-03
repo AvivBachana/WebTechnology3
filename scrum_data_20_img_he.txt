@@ -1,0 +1,368 @@
+{
+  "kanban": {
+    "tasks": {
+      "t1": {
+        "title": "הגדרת דרישות ראשוניות",
+        "description": "איסוף וניתוח דרישות המערכת הראשוניות מהלקוחות.",
+        "value": 10000,
+        "priority": "גבוה",
+        "createddate": "2025-05-01",
+        "workload": 40,
+        "urgency": "דחוף",
+        "risk": "בינוני",
+        "dependencies": [],
+        "complexity": 5,
+        "owner": "m1"
+      },
+      "t2": {
+        "title": "עיצוב מסד נתונים",
+        "description": "תכנון סכמת מסד הנתונים עבור המערכת.",
+        "value": 8000,
+        "priority": "גבוה",
+        "createddate": "2025-05-02",
+        "workload": 30,
+        "urgency": "גבוה",
+        "risk": "גבוה",
+        "dependencies": ["t1"],
+        "complexity": 7,
+        "owner": "m3"
+      },
+      "t3": {
+        "title": "פיתוח מודול הזדהות",
+        "description": "פיתוח רכיבי התחברות ורישום משתמשים.",
+        "value": 12000,
+        "priority": "גבוה",
+        "createddate": "2025-05-03",
+        "workload": 50,
+        "urgency": "גבוה",
+        "risk": "בינוני",
+        "dependencies": ["t2"],
+        "complexity": 6,
+        "owner": "m5"
+      },
+      "t4": {
+        "title": "עיצוב ממשק משתמש (UI)",
+        "description": "יצירת סקיצות ועיצוב ויזואלי של ממשק המשתמש.",
+        "value": 7000,
+        "priority": "בינוני",
+        "createddate": "2025-05-04",
+        "workload": 25,
+        "urgency": "בינוני",
+        "risk": "נמוך",
+        "dependencies": ["t1"],
+        "complexity": 4,
+        "owner": "m2"
+      },
+      "t5": {
+        "title": "פיתוח שירותי API",
+        "description": "בניית נקודות קצה (Endpoints) עבור שירותי המערכת.",
+        "value": 15000,
+        "priority": "גבוה",
+        "createddate": "2025-05-05",
+        "workload": 60,
+        "urgency": "גבוה",
+        "risk": "גבוה",
+        "dependencies": ["t2", "t3"],
+        "complexity": 8,
+        "owner": "m7"
+      },
+      "t6": {
+        "title": "יישום שכבת שירות (Frontend)",
+        "description": "בניית הרכיבים הויזואליים בצד הלקוח על פי העיצוב.",
+        "value": 13000,
+        "priority": "גבוה",
+        "createddate": "2025-05-06",
+        "workload": 55,
+        "urgency": "גבוה",
+        "risk": "בינוני",
+        "dependencies": ["t4", "t5"],
+        "complexity": 7,
+        "owner": "m9"
+      },
+      "t7": {
+        "title": "כתיבת בדיקות יחידה",
+        "description": "פיתוח בדיקות אוטומטיות עבור רכיבים שונים במערכת.",
+        "value": 6000,
+        "priority": "בינוני",
+        "createddate": "2025-05-07",
+        "workload": 20,
+        "urgency": "בינוני",
+        "risk": "נמוך",
+        "dependencies": ["t5", "t6"],
+        "complexity": 5,
+        "owner": "m4"
+      },
+      "t8": {
+        "title": "הקמת סביבת עבודה",
+        "description": "התקנה והגדרת הכלים והספריות הנדרשים לפיתוח.",
+        "value": 4000,
+        "priority": "גבוה",
+        "createddate": "2025-05-01",
+        "workload": 15,
+        "urgency": "דחוף",
+        "risk": "בינוני",
+        "dependencies": [],
+        "complexity": 3,
+        "owner": "m6"
+      },
+      "t9": {
+        "title": "שילוב שירותי צד שלישי",
+        "description": "חיבור המערכת לשירותים חיצוניים כמו שירותי תשלום או מייל.",
+        "value": 9000,
+        "priority": "גבוה",
+        "createddate": "2025-05-08",
+        "workload": 35,
+        "urgency": "גבוה",
+        "risk": "גבוה",
+        "dependencies": ["t5"],
+        "complexity": 7,
+        "owner": "m8"
+      },
+      "t10": {
+        "title": "הכנת מסמכי תיעוד",
+        "description": "כתיבת תיעוד טכני למפתחים ומשתמשי קצה.",
+        "value": 5000,
+        "priority": "נמוך",
+        "createddate": "2025-05-09",
+        "workload": 25,
+        "urgency": "נמוך",
+        "risk": "נמוך",
+        "dependencies": ["t6"],
+        "complexity": 4,
+        "owner": "m10"
+      },
+      "t11": {
+        "title": "פיתוח מודול ניהול משתמשים",
+        "description": "פיתוח פונקציונליות ליצירה, עריכה ומחיקה של משתמשים.",
+        "value": 11000,
+        "priority": "גבוה",
+        "createddate": "2025-05-10",
+        "workload": 45,
+        "urgency": "גבוה",
+        "risk": "בינוני",
+        "dependencies": ["t5", "t6"],
+        "complexity": 6,
+        "owner": "m5"
+      },
+      "t12": {
+        "title": "פיתוח מודול דיווח",
+        "description": "בניית דוחות וסטטיסטיקות עבור המערכת.",
+        "value": 14000,
+        "priority": "גבוה",
+        "createddate": "2025-05-11",
+        "workload": 50,
+        "urgency": "בינוני",
+        "risk": "בינוני",
+        "dependencies": ["t5"],
+        "complexity": 7,
+        "owner": "m3"
+      },
+      "t13": {
+        "title": "הכנת תוכנית בדיקות",
+        "description": "יצירת תוכנית מפורטת לביצוע בדיקות אינטגרציה ומערכת.",
+        "value": 5000,
+        "priority": "בינוני",
+        "createddate": "2025-05-12",
+        "workload": 20,
+        "urgency": "בינוני",
+        "risk": "נמוך",
+        "dependencies": ["t1"],
+        "complexity": 3,
+        "owner": "m4"
+      },
+      "t14": {
+        "title": "ביצוע בדיקות אינטגרציה",
+        "description": "בדיקת שילוב בין רכיבי המערכת השונים.",
+        "value": 8000,
+        "priority": "גבוה",
+        "createddate": "2025-05-13",
+        "workload": 30,
+        "urgency": "גבוה",
+        "risk": "בינוני",
+        "dependencies": ["t11", "t12", "t13"],
+        "complexity": 6,
+        "owner": "m4"
+      },
+      "t15": {
+        "title": "אופטימיזציה של ביצועים",
+        "description": "שיפור מהירות וביצועי המערכת.",
+        "value": 10000,
+        "priority": "בינוני",
+        "createddate": "2025-05-14",
+        "workload": 40,
+        "urgency": "בינוני",
+        "risk": "גבוה",
+        "dependencies": ["t5", "t6"],
+        "complexity": 8,
+        "owner": "m7"
+      },
+      "t16": {
+        "title": "הקמת סביבת ייצור",
+        "description": "התקנה והגדרת השרתים והתשתיות לסביבת הייצור.",
+        "value": 7000,
+        "priority": "גבוה",
+        "createddate": "2025-05-15",
+        "workload": 25,
+        "urgency": "דחוף",
+        "risk": "גבוה",
+        "dependencies": [],
+        "complexity": 5,
+        "owner": "m6"
+      },
+      "t17": {
+        "title": "פריסה לסביבת ייצור",
+        "description": "העלאת קוד המערכת לסביבת הייצור.",
+        "value": 9000,
+        "priority": "גבוה",
+        "createddate": "2025-05-16",
+        "workload": 30,
+        "urgency": "דחוף",
+        "risk": "גבוה",
+        "dependencies": ["t14", "t16"],
+        "complexity": 6,
+        "owner": "m6"
+      },
+      "t18": {
+        "title": "הכנת הדרכה למשתמשים",
+        "description": "יצירת חומרי הדרכה והדרכה פרונטלית למשתמשי קצה.",
+        "value": 6000,
+        "priority": "נמוך",
+        "createddate": "2025-05-17",
+        "workload": 20,
+        "urgency": "נמוך",
+        "risk": "נמוך",
+        "dependencies": ["t10"],
+        "complexity": 4,
+        "owner": "m2"
+      },
+      "t19": {
+        "title": "איסוף משוב מלקוחות ראשונים",
+        "description": "איסוף וניתוח משוב ממשתמשים ראשונים של המערכת.",
+        "value": 5000,
+        "priority": "בינוני",
+        "createddate": "2025-05-18",
+        "workload": 15,
+        "urgency": "בינוני",
+        "risk": "נמוך",
+        "dependencies": ["t17"],
+        "complexity": 3,
+        "owner": "m1"
+      },
+      "t20": {
+        "title": "תכנון ספרינט הבא",
+        "description": "תכנון המשימות לספרינט העבודה הבא.",
+        "value": 3000,
+        "priority": "גבוה",
+        "createddate": "2025-05-19",
+        "workload": 10,
+        "urgency": "גבוה",
+        "risk": "נמוך",
+        "dependencies": ["t19"],
+        "complexity": 2,
+        "owner": "m10"
+      }
+    },
+    "backlog": [
+      "t11",
+      "t12",
+      "t13",
+      "t14",
+      "t15",
+      "t16",
+      "t17",
+      "t18",
+      "t19",
+      "t20"
+    ],
+    "sprintlog": {
+      "sp1": {
+        "new": [
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5"
+        ],
+        "todo": [],
+        "doing": [],
+        "review": [],
+        "done": []
+      },
+      "sp2": {
+        "new": [
+          "t6",
+          "t7",
+          "t8",
+          "t9",
+          "t10"
+        ],
+        "todo": [],
+        "doing": [],
+        "review": [],
+        "done": []
+      }
+    },
+    "members": {
+      "m1": {
+        "name": "אורי כהן",
+        "email": "uri.cohen@example.com",
+        "phone": "050-1234567",
+        "image": "https://randomuser.me/api/portraits/men/1.jpg"
+      },
+      "m2": {
+        "name": "נועה לוי",
+        "email": "noa.levi@example.com",
+        "phone": "052-2345678",
+        "image": "https://randomuser.me/api/portraits/women/2.jpg"
+      },
+      "m3": {
+        "name": "דניאל מזרחי",
+        "email": "daniel.mizrahi@example.com",
+        "phone": "054-3456789",
+        "image": "https://randomuser.me/api/portraits/men/3.jpg"
+      },
+      "m4": {
+        "name": "שרה פרץ",
+        "email": "sara.peretz@example.com",
+        "phone": "058-4567890",
+        "image": "https://randomuser.me/api/portraits/women/4.jpg"
+      },
+      "m5": {
+        "name": "יוסי אברהם",
+        "email": "yossi.avraham@example.com",
+        "phone": "053-5678901",
+        "image": "https://randomuser.me/api/portraits/men/5.jpg"
+      },
+      "m6": {
+        "name": "מיכל טוויזר",
+        "email": "michal.twizer@example.com",
+        "phone": "050-6789012",
+        "image": "https://randomuser.me/api/portraits/women/6.jpg"
+      },
+      "m7": {
+        "name": "איתי בן דוד",
+        "email": "itay.bendavid@example.com",
+        "phone": "052-7890123",
+        "image": "https://randomuser.me/api/portraits/men/7.jpg"
+      },
+      "m8": {
+        "name": "רעות אטיאס",
+        "email": "reut.atias@example.com",
+        "phone": "054-8901234",
+        "image": "https://randomuser.me/api/portraits/women/8.jpg"
+      },
+      "m9": {
+        "name": "גיל כץ",
+        "email": "gil.katz@example.com",
+        "phone": "058-9012345",
+        "image": "https://randomuser.me/api/portraits/men/9.jpg"
+      },
+      "m10": {
+        "name": "טל שקד",
+        "email": "tal.shaked@example.com",
+        "phone": "053-0123456",
+        "image": "https://randomuser.me/api/portraits/women/10.jpg"
+      }
+    }
+  }
+}
