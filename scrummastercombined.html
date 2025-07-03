@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title> סקרם מאסטר</title>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="scrummaster-view">
+
+<!-- תפריט המבורגר למסכים קטנים -->
+<div class="hamburger-menu">
+  <button onclick="toggleMenu()">☰</button>
+  <div id="menu-options" class="menu-hidden">
+    <!-- links will be injected via JS -->
+  </div>
+</div>
+
+
+
+  <div class="member-header">
+  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Product Owner">
+  <h1>סקראם מאסטר</h1>
+</div>
+
+
+  <div class="controls">
+    <label for="sprint-select">בחר ספרינט:</label>
+    <select id="sprint-select" onchange="renderBoard(this.value, isScrumMasterView)">
+      <option value="sp1">ספרינט 1</option>
+      <option value="sp2">ספרינט 2</option>
+    </select>
+    <label for="sort-tasks">מיון לפי:</label>
+<select id="sort-tasks">
+  <option value="">ללא מיון</option>
+  <option value="priority">עדיפות</option>
+  <option value="workload">עומס</option>
+</select>
+<select id="jump-to-member">
+  <option value="">דלג לחבר צוות</option>
+</select>
+
+   <button class="controls" onclick="openModal()">➕ משימה חדשה</button>
+  </div>
+
+
+  <div class="kanban-wrapper">
+  <button class="scroll-button scroll-left">←</button>
+  <button class="scroll-button scroll-right">→</button>
+  <div class="kanban-board" id="kanban-board"></div>
+</div>
+
+<div id="chart-container">
+  <h2 style="text-align: center;">דו"ח עומס לפי חבר צוות</h2>
+  <div id="bar-chart" style="height: 300px;"></div>
+</div>
+
+
+
+  <div id="task-modal" class="modal">
+    <div class="modal-content">
+      <label>** שם המשימה <input id="task-title" clas="mendatory"/></label>
+      <label> ** מבצע המשימה:
+        <select id="task-owner">
+        </select>
+      </label>
+      <label>ערך עסקי:<input type="number" id="task-value"/></label>
+      <label>עדיפות:
+        <select id="task-priority">
+          <option value="גבוהה">גבוהה</option>
+          <option value="בינונית">בינונית</option>
+          <option value="נמוכה">נמוכה</option>
+        </select>
+      </label>
+      <label>** עומס עבודה:<input type="number" id="task-workload" class="mendatory"/></label>
+            <label>סטטוס:
+        <select id="statusId">
+          <option value="backlog">Backlog</option>
+          <option value="new">חדש</option>
+          <option value="todo">לביצוע</option>
+          <option value="doing">בתהליך</option>
+          <option value="review">לבדיקה</option>
+          <option value="done">בוצע</option>
+
+        </select>
+      </label>
+      <div class="modal-footer">
+        <button onclick="saveTask()">שמור</button>
+        <button onclick="closeModal()">ביטול</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <script>
+
+  </script> -->
+
+  <script src="main.js"></script>
+</body>
+
+</html>
+
+
+

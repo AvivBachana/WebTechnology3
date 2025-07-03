@@ -1,0 +1,690 @@
+/* בסיס כללי */
+:root {
+  --high: #fd6e6c;
+  --medium: #f8d682;
+  --low: #80c683;
+  --bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --text: #333333;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --primary: #838383;
+  --accent: #00bcd4;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: var(--text);
+  direction: rtl;
+}
+
+/* Background overlay for site-wide backdrop image */
+.background-overlay {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* תפריט המבורגר */
+.hamburger-menu {
+  position: fixed;
+  background: none;
+  top: 10px;
+  min-width: 40px;
+ text-align: left;
+  left: 10px;
+  z-index: 1000;
+  display: none; /* ברירת מחדל - מוסתר */
+}
+.hamburger-menu button {
+  font-size: clamp(2em, 2.5vw, 2em);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#menu-options {
+  background: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 5px;
+  display: none;
+  flex-direction: column;
+}
+#menu-options a {
+  display: block;
+  margin-bottom: 5px;
+  color: #5a5a5a;
+  text-decoration: none;
+}
+#menu-options a:hover {
+  text-decoration: underline;
+}
+.menu-shown {
+  display: flex !important;
+}
+.menu-hidden {
+  display: none;
+  
+}
+
+  .main-menu {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+    
+  }
+
+
+
+/* קאנבאן */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: var(--shadow);
+  justify-content: center;
+  align-items: center; /* ⭐ מיישר אנכית */
+}
+
+
+.controls select {
+  padding: 0.5em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  background-color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.controls button {
+  padding: 0.5em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  background-color: #fff;
+  box-shadow: var(--shadow);
+}
+
+ .kanban-board {
+  display: flex;
+  flex-wrap: nowrap;           /* Don't wrap columns */
+  gap: 1em;
+  padding: 1em;
+  align-items: start;
+  overflow-x: auto;             /* Allow horizontal scroll */
+  scroll-behavior: smooth;
+} 
+.column {
+  flex: 0 0 220px;              /* Fixed width, no shrink */
+  min-height: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: var(--shadow);
+}
+
+.about-page {
+  background-color: #ffffff;
+  background: url('backgroung.png') no-repeat center center/ cover;
+  padding: 0 1em;
+  
+  min-height: 100vh;
+}
+
+.about-page h1 {
+  text-align: center;
+  font-size: 2.4em;
+  color: #222;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.about-page .content-box {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  color: #333;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.about-page .content-box p {
+  margin-bottom: 1.5em;
+}
+
+.column {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: var(--shadow);
+}
+
+.column h2 {
+  text-align: center;
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+/* כרטיסי משימה */
+.task {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+  border-right: 8px solid gray;
+  transition: transform 0.1s ease-in-out;
+  cursor: grab;
+  position: relative;
+    box-sizing: border-box;
+
+}
+
+.task:active {
+  cursor: grabbing;
+  transform: scale(1.02);
+}
+
+.task.high {
+  border-right-color: var(--high);
+}
+
+.task.medium {
+  border-right-color: var(--medium);
+}
+
+.task.low {
+  border-right-color: var(--low);
+}
+
+.task button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin: 0 0.2em;
+}
+
+.task button:hover {
+  color: var(--accent);
+}
+
+.task-content {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+}
+
+
+/* מודאל */
+.modal {
+  display: none; /* ✅ יסתיר את המודאל כברירת מחדל */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+
+.modal-content {
+  background: #fff;
+  padding: 1.5em;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: var(--shadow);
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.modal-content button {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  margin-inline-end: 5px;
+}
+
+/* דוח משימות */
+
+.report-container {
+  background-color: var(--card-bg);
+  margin: 2em auto;
+  padding: 2em;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  width: 95%;
+  max-width: 1000px;
+  border: 1px solid #e0e0e0;
+}
+
+.report-container h2 {
+  font-size: 1.4em;
+  color: var(--primary);
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+#report-table {
+  font-weight: bold;
+  width: 95%;
+  margin: 2em auto;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+  position: relative;
+}
+#report-table td:first-child {
+  font-weight: bold;
+}
+
+
+#report-table th,
+#report-table td {
+  padding: 12px 15px;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  padding-right: 50px;
+}
+
+#report-table th {
+  background-color: var(--primary);
+  color: rgb(255, 248, 248);
+}
+
+#report-table tr:hover {
+  background-color: #f1f1f1;
+}
+  
+    #bar-chart * {
+  font-family: 'Segoe UI', sans-serif !important;
+}
+
+.priority-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 0.5em;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin-bottom: 4px;
+  margin-right: 0.5em;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+}
+
+.priority-dot.high {
+  background-color: var(--high);
+}
+
+.priority-dot.medium {
+  background-color: var(--medium);
+}
+
+.priority-dot.low {
+  background-color: var(--low);
+}
+
+
+  .member-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* שמאלה כי RTL */
+    background-color: white;
+    padding: 1em;
+    box-shadow: var(--shadow);
+    margin-bottom: 1em;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+.member-header img {
+  width: clamp(60px, 10vw, 100px);
+  height: clamp(60px, 10vw, 100px);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+
+.member-header h1 {
+  font-size: clamp(2em, 2.5vw, 2em);
+  color: var(--primary);
+  margin: 0;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+#chart-container {
+  background-color: var(--card-bg);
+  padding: 2em;
+  margin: 3em auto;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  width: 90%;
+  max-width: 800px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #e0e0e0;
+}
+
+#chart-container h2 {
+  font-size: 1.5em;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+
+
+
+  @media (max-width: 600px) {
+    .member-header {
+      /* flex-direction: column; */
+      align-items: right;
+      /* RTL */
+      justify-content: right;
+      text-align: right;    
+    }
+    }
+
+    .member-header img {
+      margin: 0 0 0.5em 0;
+    }
+
+    .member-header h1 {
+      font-size: 1.2em;
+    }
+  
+
+@media (max-width: 768px) {
+  .kanban-board {
+    display: block;         /* ביטול Flex במסכים קטנים */
+    padding: 0 1em;
+  }
+
+  .column {
+    width: 100% !important; /* כל עמודה תתפרס לרוחב מלא */
+    margin-bottom: 1em;
+  }
+}
+
+
+  .column {
+    width: 100%;
+    min-width: 0;
+    padding: 1em;
+    box-sizing: border-box;
+    margin-bottom: 2em;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+
+  .task {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    word-break: break-word;
+    border-right: 8px solid gray;
+    position: relative;
+  }
+
+  .task.high {
+    border-right-color: var(--high);
+  }
+
+  .task.medium {
+    border-right-color: var(--medium);
+  }
+
+  .task.low {
+    border-right-color: var(--low);
+  }
+
+  @media (max-width: 600px) {
+  #report-table, 
+  #report-table thead,
+  #report-table tbody,
+  #report-table th,
+  #report-table td,
+  #report-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  #report-table thead {
+    display: none; /* הסתרת כותרת הטבלה */
+  }
+
+  #report-table tr {
+    margin-bottom: 1em;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: var(--shadow);
+  }
+
+  #report-table td {
+    text-align: right;
+    padding: 0.4em 0;
+    position: relative;
+    padding-right: 5.5em;
+    font-size: 0.95em;
+    border: none;
+  }
+
+  #report-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    right: 1em;
+    top: 0.4em;
+    font-weight: bold;
+    color: var(--primary);
+  }
+}
+@media (max-width: 600px) {
+  #report-table, 
+  #report-table thead,
+  #report-table tbody,
+  #report-table th,
+  #report-table td,
+  #report-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  #report-table thead {
+    display: none; /* הסתרת כותרת הטבלה */
+  }
+
+  #report-table tr {
+    margin-bottom: 1em;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: var(--shadow);
+  }
+
+  #report-table td {
+    text-align: right;
+    padding: 0.4em 0;
+    position: relative;
+    padding-right: 5.5em;
+    font-size: 0.95em;
+    border: none;
+  }
+
+  #report-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    right: 1em;
+    top: 0.4em;
+    font-weight: bold;
+    color: var(--primary);
+  }
+}
+.kanban-scroll-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em auto -1em auto;
+  max-width: 1000px;
+  padding: 0 1em;
+}
+
+.kanban-scroll-buttons button {
+  font-size: 2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.kanban-scroll-buttons button:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .kanban-scroll-buttons {
+    display: none;
+  }
+}
+
+
+
+.kanban-wrapper {
+  position: relative;
+}
+
+/* כפתורים גלילה צדדיים */
+.scroll-button {
+  position: fixed; /* ← שינוי חשוב */
+  top: 50%; /* אמצע גובה המסך */
+  transform: translateY(-50%);
+  z-index: 20;
+  font-size: 2em;
+  background: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: bo;
+}
+
+/* ימין ושמאל */
+.scroll-left {
+  float: left;
+  left: 10px;
+}
+
+.scroll-right {
+  float: right;
+  right: 10px;
+}
+
+/* הסתרה במסכים קטנים */
+@media (max-width: 768px) {
+  .scroll-button {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #report-table,
+  #report-table thead,
+  #report-table tbody,
+  #report-table th,
+  #report-table td,
+  #report-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  #report-table thead {
+    display: none;
+  }
+
+  #report-table tr {
+    margin-bottom: 1em;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: var(--shadow);
+  }
+
+  #report-table td {
+    text-align: right;
+    padding: 0.4em 0;
+    position: relative;
+    padding-right: 6.5em;
+    font-size: 0.95em;
+    border: none;
+  }
+
+  #report-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    right: 1em;
+    top: 0.4em;
+    font-weight: bold;
+    color: var(--primary);
+  }
+}
+
