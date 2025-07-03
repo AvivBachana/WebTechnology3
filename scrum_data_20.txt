@@ -2,7 +2,7 @@
 	"kanban": {
 		"tasks": {
 			"t1": {
-				"title": "Setup Development Environment",
+				"title": "באלי לאכול עוגה כי זה טעים",
 				"description": "Install necessary software and tools for the project.",
 				"value": 500,
 				"priority": 1,
